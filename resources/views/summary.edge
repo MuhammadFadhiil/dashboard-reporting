@@ -1,0 +1,212 @@
+@layout('layouts.main')
+
+@section('main')
+
+<div class="container-fluid">
+  <div class="row">
+    @include('partials.sidebar')
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Ticket Summary</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <span data-feather="calendar"></span>
+            This month
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <canvas id="myChart"></canvas>
+              <script>
+                var ctx = document.getElementById('myChart').getContext('2d');
+                var chart = new Chart(ctx, {
+                  // The type of chart we want to create
+                  type: 'bar',
+                  // The data for our dataset
+                  data: {
+                    labels: ['Week 1 (1-7)', 'Week 2 (8-14)', 'Week 3 (15-21)', 'Week 4 (22-31)'],
+                    datasets: [{
+                        label: 'Received',
+                        backgroundColor: 'rgb(0, 255, 255)',
+                        data: [23, 22, 27, 19],
+                        borderWidth: 1,
+                        borderColor: '#777',
+                        hoverBorderWidth: 3,
+                        hoverBorderColor: '#000'
+                      },
+                      {
+                        label: 'Resolved',
+                        backgroundColor: 'rgb(0, 102, 204)',
+                        data: [22, 22, 25, 17],
+                        borderWidth: 1,
+                        borderColor: '#777',
+                        hoverBorderWidth: 3,
+                        hoverBorderColor: '#000'
+                      },
+                      {
+                        label: 'Pending',
+                        backgroundColor: 'rgb(0, 0, 153)',
+                        data: [1, 0, 2, 2],
+                        borderWidth: 1,
+                        borderColor: '#777',
+                        hoverBorderWidth: 3,
+                        hoverBorderColor: '#000'
+                      }
+                    ]
+                  },
+                  // Configuration options go here
+                  options: {
+                    title: {
+                      display: true,
+                      text: 'Ticket Status',
+                      fontSize: 25
+                    },
+                    legend: {
+                      display: true,
+                      position: 'bottom'
+                    }
+                  }
+                });
+
+              </script>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <canvas id="myChart1"></canvas>
+              <script>
+                var ctx = document.getElementById('myChart1').getContext('2d');
+                var chart = new Chart(ctx, {
+                  // The type of chart we want to create
+                  type: 'bar',
+                  // The data for our dataset
+                  data: {
+                    labels: ['Urgent', 'High', 'Medium', 'Low'],
+                    datasets: [{
+                      label: 'Total',
+                      backgroundColor: 'rgb(0, 255, 255)',
+                      data: [0, 8, 43, 51],
+                      borderWidth: 1,
+                      borderColor: '#777',
+                      hoverBorderWidth: 3,
+                      hoverBorderColor: '#000'
+                    }]
+                  },
+                  // Configuration options go here
+                  options: {
+                    title: {
+                      display: true,
+                      text: 'Ticket Priority',
+                      fontSize: 25
+                    },
+                    legend: {
+                      display: false
+                    }
+                  }
+                });
+
+              </script>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 mt-3">
+          <div class="card">
+            <div class="card-body">
+              <canvas id="myChart2"></canvas>
+              <script>
+                var ctx = document.getElementById('myChart2').getContext('2d');
+                var chart = new Chart(ctx, {
+                  // The type of chart we want to create
+                  type: 'bar',
+                  // The data for our dataset
+                  data: {
+                    labels: ['Andry Darsono', 'Muhammad Fadhiil', 'Ragil Lesmana', 'Verga Setta'],
+                    datasets: [{
+                      label: 'Total',
+                      backgroundColor: 'rgb(0, 255, 255)',
+                      data: [27, 26, 21, 28],
+                      borderWidth: 1,
+                      borderColor: '#777',
+                      hoverBorderWidth: 3,
+                      hoverBorderColor: '#000'
+                    }]
+                  },
+                  // Configuration options go here
+                  options: {
+                    title: {
+                      display: true,
+                      text: 'Ticket Assigned',
+                      fontSize: 25
+                    },
+                    scales:{
+                      yAxes:[{
+                        ticks:{
+                          beginAtZero: true
+                        }
+                      }]
+                    },
+                    legend: {
+                      display: false
+                    }
+                  }
+                });
+
+              </script>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 mt-3">
+          <div class="card">
+            <div class="card-body">
+              <canvas id="myChart3"></canvas>
+              <script>
+                var ctx = document.getElementById('myChart3').getContext('2d');
+                var chart = new Chart(ctx, {
+                  // The type of chart we want to create
+                  type: 'bar',
+                  // The data for our dataset
+                  data: {
+                    labels: ['Incident', 'Problem', 'Question', 'Request'],
+                    datasets: [{
+                      label: 'Total',
+                      backgroundColor: 'rgb(0, 255, 255)',
+                      data: [4, 32, 26, 40],
+                      borderWidth: 1,
+                      borderColor: '#777',
+                      hoverBorderWidth: 3,
+                      hoverBorderColor: '#000'
+                    }]
+                  },
+                  // Configuration options go here
+                  options: {
+                    title: {
+                      display: true,
+                      text: 'Ticket Type',
+                      fontSize: 25
+                    },
+                    legend: {
+                      display: false
+                    }
+                  }
+                });
+
+              </script>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</div>
+@endsection
