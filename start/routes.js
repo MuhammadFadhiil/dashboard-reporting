@@ -16,10 +16,10 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('summary')
-Route.on('/status').render('status')
-Route.on('/priority').render('priority')
-Route.on('/type').render('type')
-Route.on('/group').render('group')
-Route.on('/firstresponse').render('firstresponse')
-Route.on('/agent').render('agent')
+Route.get('/', 'ReportingController.summary')
+Route.get('/status', 'ReportingController.status')
+Route.get('/priority', 'ReportingController.priority')
+Route.get('/type', 'ReportingController.type')
+Route.get('/group', 'ReportingController.group')
+Route.get('/firstresponse', 'ReportingController.firstresponse')
+Route.get('/agent', 'ReportingController.agent')
