@@ -1,3 +1,3 @@
 // Procfile
 
-web: ENV_SILENT=true node server.js
+web: node server.js
