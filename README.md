@@ -1,31 +1,36 @@
-# Adonis fullstack application
+# This Website is created using AdonisJS. AdonisJS is a NodeJS web framework.
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+### System Requirements
 
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
+The only dependencies of the framework are Node.js and npm.
 
-## Setup
+Ensure your versions of those tools match the following criteria:
 
-Use the adonis command to install the blueprint
+- Node.js >= 8.0.0
+
+- npm >= 3.0.0
+
+- git
+
+### Install AdonisCLI
+
+AdonisJs CLI is a command line tool to help you install AdonisJs.
+
+Install it globally via npm like so:
 
 ```bash
-adonis new yardstick
+npm i -g @adonisjs/cli
 ```
 
-or manually clone the repo and then run `npm install`.
+### Run website locally
 
+clone or download this repo
 
-### Migrations
+```bash
+cd dashboard-reporting
+```
+run server.js
 
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
+```bash
+node server.js
 ```
